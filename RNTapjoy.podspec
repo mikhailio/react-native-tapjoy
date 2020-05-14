@@ -30,19 +30,19 @@ Pod::Spec.new do |s|
   s.dependency 'React'
   s.dependency 'TapjoySDK', '12.4.2'
 
-  s.subspec "RCT" do |ss|
-    ss.source_files = "ios/RCT/**/*.{h,m}"
-  end
+  # s.subspec "RCT" do |ss|
+  #   ss.source_files = "ios/RCT/**/*.{h,m}"
+  # end
 
-  s.subspec "RN" do |ss|
-    ss.source_files = "ios/RN/**/*.{h,m}"
-  end
+  # s.subspec "RN" do |ss|
+  #   ss.source_files = "ios/RN/**/*.{h,m}"
+  # end
 
   s.xcconfig = {
     'HEADER_SEARCH_PATHS' => [
         "$(inherited)",
-        "${SRCROOT}/../../React/**",
-        "${SRCROOT}/../../node_modules/react-native/**"
+        # "${SRCROOT}/../../React/**",
+        # "${SRCROOT}/../../node_modules/react-native/**"
       ].join(' ')
   }
 end
