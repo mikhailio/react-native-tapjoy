@@ -24,9 +24,9 @@ interface Currency {
 export class Tapjoy extends Component<RNTapjoyProps & ViewProperties> {
   static constants: Constants;
 
-  setUserId(userId: string): Promise<>;
-  initialise(): Promise<>;
-  spendCurrency(amount: number): Promise<>;
+  setUserId(userId: string): Promise<null>;
+  initialise(): Promise<null>;
+  spendCurrency(amount: number): Promise<null>;
   isConnected(): Promise<boolean>;
   addPlacement(name: string): Promise<string>;
   requestContent(name: string): Promise<string>;
@@ -41,7 +41,7 @@ type HookReturn = [
     tapjoyEvents: TapjoyEvent[];
   },
   {
-    initialiseTapjoy: () => Promise<>;
+    initialiseTapjoy: () => Promise<null>;
     listenToEvent: (
       eventName: TapjoyEvent,
       callback: () => {},
@@ -52,10 +52,10 @@ type HookReturn = [
     isTapjoyConnected: () => Promise<boolean>;
     tapjoyListenForEarnedCurrency: (
       callback: (currency: Currency) => {},
-    ) => Promise<>;
+    ) => Promise<null>;
     getTapjoyCurrencyBalance: (eventName: TapjoyEvent) => Promise<Currency>;
-    setTapjoyUserId: (userId: string) => Promise<>;
-    spendTapjoyCurrency: (amount: number) => Promise<>;
+    setTapjoyUserId: (userId: string) => Promise<null>;
+    spendTapjoyCurrency: (amount: number) => Promise<null>;
   },
 ];
 
